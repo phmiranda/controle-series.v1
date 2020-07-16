@@ -11,9 +11,7 @@ node_modules/
 vendor/
 
 # comentário.
-/public/hot
-/public/storage
-/storage/
+storage/
 
 # comentário.
 .env
