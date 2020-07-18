@@ -4,16 +4,18 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSeriesTable extends Migration {
+class CreateTemporadasTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        Schema::create('series', function (Blueprint $table) {
+        Schema::create('temporadas', function (Blueprint $table) {
             $table->increments('id')->nullable(false);
-            $table->string('nome', 60)->nullable(false);
+            $table->integer('numero')->nullable(false);
+            $table->integer('serie_id')->unsigned();
+            $table->foreign('serie_id')->references('id')->on('series');
         });
     }
 
@@ -23,6 +25,6 @@ class CreateSeriesTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('series');
+        Schema::dropIfExists('temporadas');
     }
 }

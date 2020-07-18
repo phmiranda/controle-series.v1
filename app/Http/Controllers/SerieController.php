@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SerieFormRequest;
-use App\Serie;
+use App\Models\Serie;
 use Illuminate\Http\Request;
 
 class SerieController extends Controller {
